@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/sourcegraph/tree-sitter-jsonnet
+	branch = main
+	commit = ddd075f1939aed8147b7aa67f042eda3fce22790
+	parent = 05d63fa12fa221971566c72feb9c47029195009f
+	method = merge
+	cmdver = 0.4.6
