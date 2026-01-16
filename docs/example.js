@@ -26,6 +26,7 @@ export const exampleList = [
   ['kotlin', '.kt'],
   ['lean', '.lean'],
   ['commonlisp', '.lisp'],
+  ['lilypond', '.ly'],
   ['lua', '.lua'],
   ['matlab', '.m'],
   ['make', '.make'],
