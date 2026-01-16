@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tree-sitter-perl/tree-sitter-perl
+	branch = master
+	commit = ad74e6db234c35d537de9358799a8e0cc4f5dee0
+	parent = ce9f9d99e39b24b403987dfb56b4780124e59c6b
+	method = merge
+	cmdver = 0.4.6
