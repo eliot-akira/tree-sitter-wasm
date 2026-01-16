@@ -4,10 +4,14 @@
   "workspaces": {
     "": {
       "name": "tree-sitter-langs-wasm",
+      "dependencies": {
+        "@tangible/git-subrepo": "^1.0.1",
+      },
       "devDependencies": {
         "@acristoffers/tree-sitter-matlab": "https://github.com/acristoffers/tree-sitter-matlab",
         "@derekstride/tree-sitter-sql": "^0.3.11",
         "@eagleoutice/tree-sitter-r": "^1.1.2",
+        "@elm-tooling/tree-sitter-elm": "https://github.com/elm-tooling/tree-sitter-elm",
         "@pfoerster/tree-sitter-latex": "^0.6.0",
         "@sengac/tree-sitter-dart": "^1.1.6",
         "@tree-sitter-grammars/tree-sitter-lua": "^0.4.1",
@@ -16,28 +20,35 @@
         "@tree-sitter-grammars/tree-sitter-yaml": "^0.7.1",
         "@tree-sitter-grammars/tree-sitter-zig": "^1.1.2",
         "@types/bun": "latest",
-        "tree-sitter-tcl": "https://github.com/tree-sitter-grammars/tree-sitter-tcl",
+        "tree-sitter-ada": "https://github.com/briot/tree-sitter-ada",
         "tree-sitter-arduino": "^0.24.0",
+        "tree-sitter-asciidoc": "https://github.com/cathaysia/tree-sitter-asciidoc",
         "tree-sitter-awk": "^0.7.2",
         "tree-sitter-bash": "^0.25.1",
         "tree-sitter-c": "^0.24.1",
         "tree-sitter-c-sharp": "^0.23.1",
         "tree-sitter-cli": "^0.26.3",
         "tree-sitter-clojure": "^0.4.0",
+        "tree-sitter-cmake": "https://github.com/uyha/tree-sitter-cmake",
         "tree-sitter-commonlisp": "^0.4.1",
         "tree-sitter-cpp": "^0.23.4",
         "tree-sitter-css": "^0.25.0",
         "tree-sitter-csv": "^1.2.0",
         "tree-sitter-d": "https://github.com/gdamore/tree-sitter-d",
         "tree-sitter-diff": "https://github.com/tree-sitter-grammars/tree-sitter-diff",
+        "tree-sitter-djot": "https://github.com/treeman/tree-sitter-djot",
         "tree-sitter-dockerfile": "https://github.com/camdencheek/tree-sitter-dockerfile",
-        "tree-sitter-elisp": "^1.6.1",
+        "tree-sitter-elisp": "https://github.com/Wilfred/tree-sitter-elisp",
         "tree-sitter-elixir": "^0.3.4",
-        "tree-sitter-elm": "^4.5.0",
         "tree-sitter-elsa": "https://github.com/glapa-grossklag/tree-sitter-elsa",
         "tree-sitter-embedded-template": "^0.25.0",
+        "tree-sitter-erlang": "https://github.com/WhatsApp/tree-sitter-erlang",
+        "tree-sitter-faust": "https://github.com/khiner/tree-sitter-faust",
+        "tree-sitter-fennel": "https://github.com/alexmozaidze/tree-sitter-fennel",
         "tree-sitter-forth": "https://github.com/AlexanderBrevig/tree-sitter-forth",
         "tree-sitter-fortran": "https://github.com/stadelmanma/tree-sitter-fortran",
+        "tree-sitter-fsharp": "https://github.com/ionide/tree-sitter-fsharp",
+        "tree-sitter-glsl": "https://github.com/tree-sitter-grammars/tree-sitter-glsl",
         "tree-sitter-go": "^0.25.0",
         "tree-sitter-haskell": "^0.23.1",
         "tree-sitter-haxe": "https://github.com/tong/tree-sitter-haxe",
@@ -76,6 +87,7 @@
         "tree-sitter-scss": "^1.0.0",
         "tree-sitter-strdl": "https://github.com/joshuadanpeterson/tree-sitter-strdl",
         "tree-sitter-swift": "^0.7.1",
+        "tree-sitter-tcl": "https://github.com/tree-sitter-grammars/tree-sitter-tcl",
         "tree-sitter-toml": "^0.5.1",
         "tree-sitter-typescript": "^0.23.2",
         "tree-sitter-uxntal": "^1.0.0",
@@ -94,11 +106,15 @@
 
     "@eagleoutice/tree-sitter-r": ["@eagleoutice/tree-sitter-r@1.1.2", "", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "sha512-HR0RyoI5uxcfsdZvTMqSM8GJyGo6DQTkfdgqygQ6N+D0KQObRH4RxYgBZ6ePsGq/36RBAqv8y0NeQvAFL2N4dQ=="],
 
+    "@elm-tooling/tree-sitter-elm": ["@elm-tooling/tree-sitter-elm@github:elm-tooling/tree-sitter-elm#6d9511c", { "dependencies": { "node-addon-api": "^8.2.1", "node-gyp-build": "^4.8.2" }, "peerDependencies": { "tree-sitter": "^0.25.0" }, "optionalPeers": ["tree-sitter"] }, "elm-tooling-tree-sitter-elm-6d9511c"],
+
     "@pfoerster/tree-sitter-latex": ["@pfoerster/tree-sitter-latex@0.6.0", "", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0 || ^0.25.0" } }, "sha512-j9V0Zh5bFoEu6ZLqbLAB+2+NWm/gsPkoKgtOf2Gbn6mikuJ5MyxMmKgwQvPIxPYC57tHcIj9oKaT4jBdN86R1Q=="],
 
     "@sengac/tree-sitter": ["@sengac/tree-sitter@0.25.15", "", { "dependencies": { "node-addon-api": "^8.3.0", "node-gyp-build": "^4.8.4" } }, "sha512-FQlxMNWYYp/tw03qoN9gpUZ3Lrhp1ti/MoG5Gcc4h98PFa6tbvN3qMkPRt4mWhmyKrL3QrOiLxEab8Gj6ZTHbw=="],
 
     "@sengac/tree-sitter-dart": ["@sengac/tree-sitter-dart@1.1.6", "", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "@sengac/tree-sitter": "^0.25.10" } }, "sha512-lLsF6pVmsC8+JkCnSvRzqa1jJYs+129EOn93MZCsvNnmDrZ2gcEaiqhTj69ttsjQZ2sR+LNxumdphHsw/Ln0Ew=="],
+
+    "@tangible/git-subrepo": ["@tangible/git-subrepo@1.0.1", "", { "bin": { "git-subrepo": "bin" } }, "sha512-SiFeokN0wKYMbbst+sOZxwMbA+oZYZzZcpnppoq2ZqmVoRI6oJRLC3F02Zam51d5vUTIzyZfIvUi2DOlnGYYDA=="],
 
     "@tree-sitter-grammars/tree-sitter-lua": ["@tree-sitter-grammars/tree-sitter-lua@0.4.1", "", { "dependencies": { "node-addon-api": "^8.5.0", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.22.4" }, "optionalPeers": ["tree-sitter"] }, "sha512-EwagFaU6ZveVk18/Y8qUhZkkiBKnQ7dSCHbm//TUroLVKy3i1rOYGy/cNHtSkAb1eDvS1HhCLybH2S541Cya/g=="],
 
@@ -114,121 +130,27 @@
 
     "@types/node": ["@types/node@25.0.8", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-powIePYMmC3ibL0UJ2i2s0WIbq6cg6UyVFQxSCpaPxxzAaziRfimGivjdF943sSGV6RADVbk0Nvlm5P/FB44Zg=="],
 
-    "ansi-regex": ["ansi-regex@2.1.1", "", {}, "sha512-TIGnTpdo+E3+pCyAluZvtED5p5wCqLdezCyhPZzKPcxvFplEt4i+W7OONCKgeZFT3+y5NZZfOOS/Bdcanm1MYA=="],
-
-    "aproba": ["aproba@1.2.0", "", {}, "sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw=="],
-
-    "are-we-there-yet": ["are-we-there-yet@1.1.7", "", { "dependencies": { "delegates": "^1.0.0", "readable-stream": "^2.0.6" } }, "sha512-nxwy40TuMiUGqMyRHgCSWZ9FM4VAoRP4xUYSTv5ImRog+h9yISPbVH7H8fASCIzYn9wlEv4zvFL7uKDMCFQm3g=="],
-
-    "base64-js": ["base64-js@1.5.1", "", {}, "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA=="],
-
-    "bl": ["bl@4.1.0", "", { "dependencies": { "buffer": "^5.5.0", "inherits": "^2.0.4", "readable-stream": "^3.4.0" } }, "sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w=="],
-
-    "buffer": ["buffer@5.7.1", "", { "dependencies": { "base64-js": "^1.3.1", "ieee754": "^1.1.13" } }, "sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ=="],
-
     "bun-types": ["bun-types@1.3.6", "", { "dependencies": { "@types/node": "*" } }, "sha512-OlFwHcnNV99r//9v5IIOgQ9Uk37gZqrNMCcqEaExdkVq3Avwqok1bJFmvGMCkCE0FqzdY8VMOZpfpR3lwI+CsQ=="],
-
-    "chownr": ["chownr@1.1.4", "", {}, "sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg=="],
-
-    "code-point-at": ["code-point-at@1.1.0", "", {}, "sha512-RpAVKQA5T63xEj6/giIbUEtZwJ4UFIc3ZtvEkiaUERylqe8xb5IvqcgOurZLahv93CLKfxcw5YI+DZcUBRyLXA=="],
-
-    "console-control-strings": ["console-control-strings@1.1.0", "", {}, "sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ=="],
-
-    "core-util-is": ["core-util-is@1.0.3", "", {}, "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="],
-
-    "decompress-response": ["decompress-response@4.2.1", "", { "dependencies": { "mimic-response": "^2.0.0" } }, "sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw=="],
-
-    "deep-extend": ["deep-extend@0.6.0", "", {}, "sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA=="],
-
-    "delegates": ["delegates@1.0.0", "", {}, "sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ=="],
-
-    "detect-libc": ["detect-libc@1.0.3", "", { "bin": { "detect-libc": "./bin/detect-libc.js" } }, "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg=="],
-
-    "end-of-stream": ["end-of-stream@1.4.5", "", { "dependencies": { "once": "^1.4.0" } }, "sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg=="],
-
-    "expand-template": ["expand-template@2.0.3", "", {}, "sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg=="],
-
-    "fs-constants": ["fs-constants@1.0.0", "", {}, "sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow=="],
-
-    "gauge": ["gauge@2.7.4", "", { "dependencies": { "aproba": "^1.0.3", "console-control-strings": "^1.0.0", "has-unicode": "^2.0.0", "object-assign": "^4.1.0", "signal-exit": "^3.0.0", "string-width": "^1.0.1", "strip-ansi": "^3.0.1", "wide-align": "^1.1.0" } }, "sha512-14x4kjc6lkD3ltw589k0NrPD6cCNTD6CWoVUNpB85+DrtONoZn+Rug6xZU5RvSC4+TZPxA5AnBibQYAvZn41Hg=="],
-
-    "github-from-package": ["github-from-package@0.0.0", "", {}, "sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw=="],
-
-    "has-unicode": ["has-unicode@2.0.1", "", {}, "sha512-8Rf9Y83NBReMnx0gFzA8JImQACstCYWUplepDa9xprwwtmgEZUF0h/i5xSA625zB/I37EtrswSST6OXxwaaIJQ=="],
-
-    "ieee754": ["ieee754@1.2.1", "", {}, "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="],
-
-    "inherits": ["inherits@2.0.4", "", {}, "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="],
-
-    "ini": ["ini@1.3.8", "", {}, "sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew=="],
-
-    "is-fullwidth-code-point": ["is-fullwidth-code-point@1.0.0", "", { "dependencies": { "number-is-nan": "^1.0.0" } }, "sha512-1pqUqRjkhPJ9miNq9SwMfdvi6lBJcd6eFxvfaivQhaH3SgisfiuudvFntdKOmxuee/77l+FPjKrQjWvmPjWrRw=="],
-
-    "isarray": ["isarray@1.0.0", "", {}, "sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ=="],
 
     "isexe": ["isexe@2.0.0", "", {}, "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="],
 
-    "mimic-response": ["mimic-response@2.1.0", "", {}, "sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA=="],
-
-    "minimist": ["minimist@1.2.8", "", {}, "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="],
-
-    "mkdirp-classic": ["mkdirp-classic@0.5.3", "", {}, "sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A=="],
+    "lodash": ["lodash@4.17.21", "", {}, "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="],
 
     "nan": ["nan@2.24.0", "", {}, "sha512-Vpf9qnVW1RaDkoNKFUvfxqAbtI8ncb8OJlqZ9wwpXzWPEsvsB1nvdUi6oYrHIkQ1Y/tMDnr1h4nczS0VB9Xykg=="],
-
-    "napi-build-utils": ["napi-build-utils@1.0.2", "", {}, "sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg=="],
-
-    "node-abi": ["node-abi@2.30.1", "", { "dependencies": { "semver": "^5.4.1" } }, "sha512-/2D0wOQPgaUWzVSVgRMx+trKJRC2UG4SUc4oCJoXx9Uxjtp0Vy3/kt7zcbxHF8+Z/pK3UloLWzBISg72brfy1w=="],
 
     "node-addon-api": ["node-addon-api@8.5.0", "", {}, "sha512-/bRZty2mXUIFY/xU5HLvveNHlswNJej+RnxBjOMkidWfwZzgTbPG1E3K5TOxRLOR+5hX7bSofy8yf1hZevMS8A=="],
 
     "node-gyp-build": ["node-gyp-build@4.8.4", "", { "bin": { "node-gyp-build": "bin.js", "node-gyp-build-optional": "optional.js", "node-gyp-build-test": "build-test.js" } }, "sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ=="],
 
-    "npmlog": ["npmlog@4.1.2", "", { "dependencies": { "are-we-there-yet": "~1.1.2", "console-control-strings": "~1.1.0", "gauge": "~2.7.3", "set-blocking": "~2.0.0" } }, "sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg=="],
-
-    "number-is-nan": ["number-is-nan@1.0.1", "", {}, "sha512-4jbtZXNAsfZbAHiiqjLPBiCl16dES1zI4Hpzzxw61Tk+loF+sBDBKx1ICKKKwIqQ7M0mFn1TmkN7euSncWgHiQ=="],
-
-    "object-assign": ["object-assign@4.1.1", "", {}, "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="],
-
-    "once": ["once@1.4.0", "", { "dependencies": { "wrappy": "1" } }, "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w=="],
-
-    "prebuild-install": ["prebuild-install@6.1.4", "", { "dependencies": { "detect-libc": "^1.0.3", "expand-template": "^2.0.3", "github-from-package": "0.0.0", "minimist": "^1.2.3", "mkdirp-classic": "^0.5.3", "napi-build-utils": "^1.0.1", "node-abi": "^2.21.0", "npmlog": "^4.0.1", "pump": "^3.0.0", "rc": "^1.2.7", "simple-get": "^3.0.3", "tar-fs": "^2.0.0", "tunnel-agent": "^0.6.0" }, "bin": { "prebuild-install": "bin.js" } }, "sha512-Z4vpywnK1lBg+zdPCVCsKq0xO66eEV9rWo2zrROGGiRS4JtueBOdlB1FnY8lcy7JsUud/Q3ijUxyWN26Ika0vQ=="],
-
-    "process-nextick-args": ["process-nextick-args@2.0.1", "", {}, "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="],
-
-    "pump": ["pump@3.0.3", "", { "dependencies": { "end-of-stream": "^1.1.0", "once": "^1.3.1" } }, "sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA=="],
-
-    "rc": ["rc@1.2.8", "", { "dependencies": { "deep-extend": "^0.6.0", "ini": "~1.3.0", "minimist": "^1.2.0", "strip-json-comments": "~2.0.1" }, "bin": { "rc": "./cli.js" } }, "sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw=="],
-
-    "readable-stream": ["readable-stream@2.3.8", "", { "dependencies": { "core-util-is": "~1.0.0", "inherits": "~2.0.3", "isarray": "~1.0.0", "process-nextick-args": "~2.0.0", "safe-buffer": "~5.1.1", "string_decoder": "~1.1.1", "util-deprecate": "~1.0.1" } }, "sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA=="],
-
-    "safe-buffer": ["safe-buffer@5.2.1", "", {}, "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="],
-
-    "semver": ["semver@5.7.2", "", { "bin": { "semver": "bin/semver" } }, "sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g=="],
-
-    "set-blocking": ["set-blocking@2.0.0", "", {}, "sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw=="],
-
-    "signal-exit": ["signal-exit@3.0.7", "", {}, "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="],
-
-    "simple-concat": ["simple-concat@1.0.1", "", {}, "sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q=="],
-
-    "simple-get": ["simple-get@3.1.1", "", { "dependencies": { "decompress-response": "^4.2.0", "once": "^1.3.1", "simple-concat": "^1.0.0" } }, "sha512-CQ5LTKGfCpvE1K0n2us+kuMPbk/q0EKl82s4aheV9oXjFEz6W/Y7oQFVJuU6QG77hRT4Ghb5RURteF5vnWjupA=="],
-
-    "string-width": ["string-width@1.0.2", "", { "dependencies": { "code-point-at": "^1.0.0", "is-fullwidth-code-point": "^1.0.0", "strip-ansi": "^3.0.0" } }, "sha512-0XsVpQLnVCXHJfyEs8tC0zpTVIr5PKKsQtkT29IwupnPTjtPmQ3xT/4yCREF9hYkV/3M3kzcUTSAZT6a6h81tw=="],
-
-    "string_decoder": ["string_decoder@1.1.1", "", { "dependencies": { "safe-buffer": "~5.1.0" } }, "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg=="],
-
-    "strip-ansi": ["strip-ansi@3.0.1", "", { "dependencies": { "ansi-regex": "^2.0.0" } }, "sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg=="],
-
-    "strip-json-comments": ["strip-json-comments@2.0.1", "", {}, "sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ=="],
-
-    "tar-fs": ["tar-fs@2.1.4", "", { "dependencies": { "chownr": "^1.1.1", "mkdirp-classic": "^0.5.2", "pump": "^3.0.0", "tar-stream": "^2.1.4" } }, "sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ=="],
-
-    "tar-stream": ["tar-stream@2.2.0", "", { "dependencies": { "bl": "^4.0.3", "end-of-stream": "^1.4.1", "fs-constants": "^1.0.0", "inherits": "^2.0.3", "readable-stream": "^3.1.1" } }, "sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ=="],
+    "prettier": ["prettier@2.8.8", "", { "bin": { "prettier": "bin-prettier.js" } }, "sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q=="],
 
     "tree-sitter": ["tree-sitter@0.21.1", "", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.0" } }, "sha512-7dxoA6kYvtgWw80265MyqJlkRl4yawIjO7S5MigytjELkX43fV2WsAXzsNfO7sBpPPCF5Gp0+XzHk0DwLCq3xQ=="],
 
+    "tree-sitter-ada": ["tree-sitter-ada@github:briot/tree-sitter-ada#6b58259", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.22.4" }, "optionalPeers": ["tree-sitter"] }, "briot-tree-sitter-ada-6b58259"],
+
     "tree-sitter-arduino": ["tree-sitter-arduino@0.24.0", "", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4", "tree-sitter-c": "^0.24.1", "tree-sitter-cpp": "^0.23.4" }, "peerDependencies": { "tree-sitter": "^0.25.0" }, "optionalPeers": ["tree-sitter"] }, "sha512-ETut2jffiQ4LKFSfeeEHPxSt6q8fXBP4KzIMTGGOdT7+OON9hZi3CP5N1+iefvqV6ocjzkfiYsFwMpNKihYE6w=="],
+
+    "tree-sitter-asciidoc": ["tree-sitter-asciidoc@github:cathaysia/tree-sitter-asciidoc#276ae6b", {}, "cathaysia-tree-sitter-asciidoc-276ae6b"],
 
     "tree-sitter-awk": ["tree-sitter-awk@0.7.2", "", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "sha512-Y9qGrM9a/AkeglOMSYzM0Tek5rox9WZmlV1/l3wyBJaMdpeMGsC3z4Jn+OvuevJO78gtmW1SuXfCva1f4veuTg=="],
 
@@ -242,6 +164,8 @@
 
     "tree-sitter-clojure": ["tree-sitter-clojure@0.4.0", "", { "dependencies": { "nan": "^2.12.1" } }, "sha512-Yzsu1Hwm9PZhl+FOEtY/WQxeal5CP1ZRLgEoYec50yXVn1SLXB1EQ8+zXI38l33Gecowl2XjYggA7DQzFi07Vw=="],
 
+    "tree-sitter-cmake": ["tree-sitter-cmake@github:uyha/tree-sitter-cmake#c7b2a71", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "uyha-tree-sitter-cmake-c7b2a71"],
+
     "tree-sitter-commonlisp": ["tree-sitter-commonlisp@0.4.1", "", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.1" } }, "sha512-owvpVac4HiCt0vAAndrDRGL9YgIFjNVvrEIf1/9x15TZwjKTsTGuldD7C2myV/pOU3zeaHEoSNUvY+DftpLRLQ=="],
 
     "tree-sitter-cpp": ["tree-sitter-cpp@0.23.4", "", { "dependencies": { "node-addon-api": "^8.2.1", "node-gyp-build": "^4.8.2", "tree-sitter-c": "^0.23.1" }, "peerDependencies": { "tree-sitter": "^0.21.1" }, "optionalPeers": ["tree-sitter"] }, "sha512-qR5qUDyhZ5jJ6V8/umiBxokRbe89bCGmcq/dk94wI4kN86qfdV8k0GHIUEKaqWgcu42wKal5E97LKpLeVW8sKw=="],
@@ -254,21 +178,31 @@
 
     "tree-sitter-diff": ["tree-sitter-diff@github:tree-sitter-grammars/tree-sitter-diff#2520c3f", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.1" }, "peerDependencies": { "tree-sitter": "^0.21.1" } }, "tree-sitter-grammars-tree-sitter-diff-2520c3f"],
 
+    "tree-sitter-djot": ["tree-sitter-djot@github:treeman/tree-sitter-djot#74fac1f", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "treeman-tree-sitter-djot-74fac1f"],
+
     "tree-sitter-dockerfile": ["tree-sitter-dockerfile@github:camdencheek/tree-sitter-dockerfile#971acdd", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "camdencheek-tree-sitter-dockerfile-971acdd"],
 
-    "tree-sitter-elisp": ["tree-sitter-elisp@1.6.1", "", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.25.0" } }, "sha512-ALJ50YOuqu2Z/qKyQMh3RT5OhQmTRc2K/4MZzPdd1eKyFdKPaYpG0ZmPyovNTXyW14Qn63SgY960el55wLwy8Q=="],
+    "tree-sitter-elisp": ["tree-sitter-elisp@github:Wilfred/tree-sitter-elisp#29b4e49", { "dependencies": { "node-addon-api": "^8.0.0", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.25.0" } }, "Wilfred-tree-sitter-elisp-29b4e49"],
 
     "tree-sitter-elixir": ["tree-sitter-elixir@0.3.4", "", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "sha512-Bmaza0305xlrv9o4K+Piqd+pdgoAZp5cDIM2EURsmv0znFEXrXCcRoGOw2q6SsDdX8e6WI43+sQ2ye4xnXASBA=="],
-
-    "tree-sitter-elm": ["tree-sitter-elm@4.5.0", "", { "dependencies": { "nan": "^2.14.2", "prebuild-install": "^6.0.0" } }, "sha512-GNUKjhOQCiARkQLPEmeYYugbQtuEAdy1uZyoQbQnXXsmKM4apCXpJsd9F9ExwCsq2s40PXD2y+wLUnH17BBkkg=="],
 
     "tree-sitter-elsa": ["tree-sitter-elsa@github:glapa-grossklag/tree-sitter-elsa#0a66b2b", { "dependencies": { "nan": "^2.15.0" } }, "glapa-grossklag-tree-sitter-elsa-0a66b2b"],
 
     "tree-sitter-embedded-template": ["tree-sitter-embedded-template@0.25.0", "", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.25.0" }, "optionalPeers": ["tree-sitter"] }, "sha512-DLWFFWito68hgjMC3kDaqDpcHRGr+ZC2cz4pFR/XeWilq9C0dLawsxi+pK6qRM/ICZw6YNmf5w28y0tpcfbNsA=="],
 
+    "tree-sitter-erlang": ["tree-sitter-erlang@github:WhatsApp/tree-sitter-erlang#f21023b", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0", "prettier": "^2.2.1", "tree-sitter-cli": "^0.23.0" }, "peerDependencies": { "tree-sitter": "^0.22.4" } }, "WhatsApp-tree-sitter-erlang-f21023b"],
+
+    "tree-sitter-faust": ["tree-sitter-faust@github:khiner/tree-sitter-faust#122dd10", { "dependencies": { "nan": "^2.18.0" } }, "khiner-tree-sitter-faust-122dd10"],
+
+    "tree-sitter-fennel": ["tree-sitter-fennel@github:alexmozaidze/tree-sitter-fennel#fd4a24e", { "dependencies": { "lodash": "^4.17.21", "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.21.0" } }, "alexmozaidze-tree-sitter-fennel-fd4a24e"],
+
     "tree-sitter-forth": ["tree-sitter-forth@github:AlexanderBrevig/tree-sitter-forth#360ef13", { "dependencies": { "nan": "^2.17.0" } }, "AlexanderBrevig-tree-sitter-forth-360ef13"],
 
     "tree-sitter-fortran": ["tree-sitter-fortran@github:stadelmanma/tree-sitter-fortran#589151a", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "==0.25.0" } }, "stadelmanma-tree-sitter-fortran-589151a"],
+
+    "tree-sitter-fsharp": ["tree-sitter-fsharp@github:ionide/tree-sitter-fsharp#5141851", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.22.4" } }, "ionide-tree-sitter-fsharp-5141851"],
+
+    "tree-sitter-glsl": ["tree-sitter-glsl@github:tree-sitter-grammars/tree-sitter-glsl#24a6c8e", { "dependencies": { "node-addon-api": "^7.1.0", "node-gyp-build": "^4.8.0" }, "peerDependencies": { "tree-sitter": "^0.22.1" } }, "tree-sitter-grammars-tree-sitter-glsl-24a6c8e"],
 
     "tree-sitter-go": ["tree-sitter-go@0.25.0", "", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.25.0" }, "optionalPeers": ["tree-sitter"] }, "sha512-APBc/Dq3xz/e35Xpkhb1blu5UgW+2E3RyGWawZSCNcbGwa7jhSQPS8KsUupuzBla8PCo8+lz9W/JDJjmfRa2tw=="],
 
@@ -356,35 +290,21 @@
 
     "tree-sitter-wat": ["tree-sitter-wat@0.1.0", "", {}, "sha512-T+OFY/q+qKxAbAz/KrO4Kb1/2yUeRyr8a369fNMZUXRc7+tvgVoh9KHexZEC3CIuyD1I5yB8LXoqZZpuxHYaLg=="],
 
-    "tunnel-agent": ["tunnel-agent@0.6.0", "", { "dependencies": { "safe-buffer": "^5.0.1" } }, "sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w=="],
-
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
     "undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
-
-    "util-deprecate": ["util-deprecate@1.0.2", "", {}, "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="],
 
     "web-tree-sitter": ["web-tree-sitter@0.26.3", "", {}, "sha512-JIVgIKFS1w6lejxSntCtsS/QsE/ecTS00en809cMxMPxaor6MvUnQ+ovG8uTTTvQCFosSh4MeDdI5bSGw5SoBw=="],
 
     "which": ["which@2.0.2", "", { "dependencies": { "isexe": "^2.0.0" }, "bin": { "node-which": "./bin/node-which" } }, "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="],
 
-    "wide-align": ["wide-align@1.1.5", "", { "dependencies": { "string-width": "^1.0.2 || 2 || 3 || 4" } }, "sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg=="],
-
-    "wrappy": ["wrappy@1.0.2", "", {}, "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="],
-
     "@derekstride/tree-sitter-sql/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
     "@sengac/tree-sitter-dart/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
-    "bl/readable-stream": ["readable-stream@3.6.2", "", { "dependencies": { "inherits": "^2.0.3", "string_decoder": "^1.1.1", "util-deprecate": "^1.0.1" } }, "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA=="],
-
-    "readable-stream/safe-buffer": ["safe-buffer@5.1.2", "", {}, "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="],
-
-    "string_decoder/safe-buffer": ["safe-buffer@5.1.2", "", {}, "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="],
-
-    "tar-stream/readable-stream": ["readable-stream@3.6.2", "", { "dependencies": { "inherits": "^2.0.3", "string_decoder": "^1.1.1", "util-deprecate": "^1.0.1" } }, "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA=="],
-
     "tree-sitter-awk/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
+
+    "tree-sitter-cmake/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
     "tree-sitter-commonlisp/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
@@ -392,11 +312,21 @@
 
     "tree-sitter-d/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
+    "tree-sitter-djot/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
+
     "tree-sitter-dockerfile/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
     "tree-sitter-elixir/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
+    "tree-sitter-erlang/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
+
+    "tree-sitter-erlang/tree-sitter-cli": ["tree-sitter-cli@0.23.2", "", { "bin": { "tree-sitter": "cli.js" } }, "sha512-kPPXprOqREX+C/FgUp2Qpt9jd0vSwn+hOgjzVv/7hapdoWpa+VeWId53rf4oNNd29ikheF12BYtGD/W90feMbA=="],
+
+    "tree-sitter-fennel/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
+
     "tree-sitter-fortran/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
+
+    "tree-sitter-glsl/node-addon-api": ["node-addon-api@7.1.1", "", {}, "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="],
 
     "tree-sitter-json5/tree-sitter-cli": ["tree-sitter-cli@0.25.10", "", { "bin": { "tree-sitter": "cli.js" } }, "sha512-KoebQguKMCIghisEOdA372TIbrUl0kdnfZ9YQIBRAeOvNSKe85XbU4LuFW7hduRUwJj0rAG7pX5wo9sZhbBF1g=="],
 

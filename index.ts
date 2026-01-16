@@ -1,13 +1,4 @@
 import fs from 'node:fs/promises'
-// import {
-//   Edit,
-//   Language,
-//   type Node,
-//   Parser,
-//   Query,
-//   type Tree,
-//   TreeCursor,
-// } from './tree-sitter'
 import {
   Edit,
   Language,

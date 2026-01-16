@@ -3,12 +3,15 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 for (const lang of [
+  'ada',
+  'asciidoc',
   'arduino',
   'awk',
   'bash',
   'c-sharp',
   'c',
   'clojure',
+  'cmake',
   'commonlisp',
   'cpp',
   'css',
@@ -16,15 +19,21 @@ for (const lang of [
   'd',
   'dart',
   'diff',
+  'djot',
   'dockerfile',
   'elisp',
   // 'diff',
   'elixir',
   'elsa',
-  // 'elm', // Compile error
+  'elm', // Compile error
   'embedded-template',
+  'erlang',
+  'faust',
+  'fennel',
   'forth',
   'fortran',
+  'fsharp',
+  'glsl',
   'go',
   'haskell',
   'haxe',

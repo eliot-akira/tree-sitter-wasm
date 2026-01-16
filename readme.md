@@ -100,3 +100,4 @@ bun run build.ts
 ## Reference
 
 - [tree-sitter web binding](https://github.com/tree-sitter/tree-sitter/tree/master/lib/binding_web#readme)
+- [tree-sitter wiki: List of parsers](https://github.com/tree-sitter/tree-sitter/wiki/List-of-parsers)
