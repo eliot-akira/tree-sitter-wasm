@@ -1,0 +1,309 @@
+==========
+[instructions/unary] basic unary minus
+==========
+foo -10
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal))))
+
+==========
+[instructions/unary] unary expression with symbol
+==========
+foo -bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (symbol)))))
+
+==========
+[instructions/unary] negative number as separate operand
+==========
+foo 1 -1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (decimal))))
+
+==========
+[instructions/unary] unary expression on parenthesized expression
+==========
+foo 1 -(-1)
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (parenthesized_expression
+          arguments: (instruction_operands
+            (decimal)))))))
+
+==========
+[instructions/unary] unary in binary expression
+==========
+foo 1 -- 1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (binary_expression
+        left: (decimal)
+        operator: (additive_operator)
+        right: (unary_expression
+          operator: (unary_minus_operator)
+          argument: (decimal))))))
+
+==========
+[instructions/unary] bitwise NOT unary operator
+==========
+foo ~1
+foo ~ 1
+foo ~bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (symbol)))))
+
+==========
+[instructions/unary] logical NOT unary operator
+==========
+foo !1
+foo ! 1
+foo !bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (symbol)))))
+
+==========
+[instructions/unary] nested unary expressions
+==========
+foo 1 --1
+foo 1 ~~1
+foo 1 !!1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (unary_expression
+          operator: (bitwise_not_operator)
+          argument: (decimal)))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (unary_expression
+          operator: (logical_not_operator)
+          argument: (decimal))))))
+
+==========
+[instructions/unary] unary on parenthesized with different operators
+==========
+foo 1 -(-1)
+foo 1 ~(~1)
+foo 1 !(!1)
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (parenthesized_expression
+          arguments: (instruction_operands
+            (decimal))))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (parenthesized_expression
+          arguments: (instruction_operands
+            (unary_expression
+              operator: (bitwise_not_operator)
+              argument: (decimal)))))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (parenthesized_expression
+          arguments: (instruction_operands
+            (unary_expression
+              operator: (logical_not_operator)
+              argument: (decimal))))))))
+
+==========
+[instructions/unary] unary on register
+==========
+foo -$t0
+foo ~$s0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (register))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (register)))))
+
+==========
+[instructions/unary] unary on macro variable
+==========
+foo -%1
+foo ~%var
+foo !%flag
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (macro_variable))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (macro_variable))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (macro_variable)))))
+
+==========
+[instructions/unary] unary on relocation expression
+==========
+foo -%hi(label)
+foo ~%lo(symbol)
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (unary_minus_operator)
+        argument: (parenthesized_expression
+          head: (macro_variable)
+          arguments: (instruction_operands
+            (symbol))))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (parenthesized_expression
+          head: (macro_variable)
+          arguments: (instruction_operands
+            (symbol)))))))
+
+==========
+[instructions/unary] unary with leading whitespace (should be separate operands)
+==========
+foo 1 -1
+foo 1 ~1
+foo 1 !1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (decimal)))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (bitwise_not_operator)
+        argument: (decimal))))
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (unary_expression
+        operator: (logical_not_operator)
+        argument: (decimal)))))

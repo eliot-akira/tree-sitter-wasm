@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/omeyenburg/tree-sitter-riscv
+	branch = main
+	commit = cd5199424b3574d41e8d59fb8649333f05392e63
+	parent = 4adfcfeba329578f094ece0c57159fc01a49d425
+	method = merge
+	cmdver = 0.4.6

@@ -1,0 +1,49 @@
+==========
+[instructions/opcode] basic opcode
+==========
+foo
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)))
+
+==========
+[instructions/opcode] uppercase opcode
+==========
+FOO
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)))
+
+==========
+[instructions/opcode] opcode starting with underscore
+==========
+_foo
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)))
+
+==========
+[instructions/opcode] opcode containing underscore
+==========
+foo_bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)))
+
+==========
+[instructions/opcode] opcode containing dot
+==========
+foo.bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)))

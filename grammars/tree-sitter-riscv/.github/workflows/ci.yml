@@ -1,0 +1,117 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - grammar.js
+      - queries/**
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+      - .github/workflows/ci.yml
+  pull_request:
+    paths:
+      - grammar.js
+      - queries/**
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+      - .github/workflows/ci.yml
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test parser
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+        with:
+          # Match version of tree-sitter-cli. Using 0.25.x breaks swift.
+          tree-sitter-ref: v0.24.7
+      - name: Set up examples
+        run: |-
+          git clone https://github.com/AleksandrHovhannisyan/MIPS-Linked-List --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/ClaudioKamoda/MIPS-Assembly-Projects --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/LearningOS/rcore_step_by_step --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/apebl/mips-asm-examples --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/badgeteam/mch2022-firmware-ice40 --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/erenulas/mips-assembly-examples --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/ffcabbar/MIPS-Assembly-Language-Examples --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/gsauthof/riscv --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/kilobyte/arch-test --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/preames/simple-vector-riscv --single-branch --depth=1 --filter=blob:none
+          git clone https://github.com/rohitdwivedula/mips-exercises --single-branch --depth=1 --filter=blob:none
+      - name: Run tests
+        uses: tree-sitter/parser-test-action@v2
+        with:
+          test-rust: true
+          test-node: true
+          test-python: true
+          test-go: true
+          test-swift: ${{ matrix.os == 'macos-latest' }}
+          node-version: '22'
+          # Swift disabled on Ubuntu due to setup-swift@v2 bug #694.
+          # Swift is skipped on Windows.
+      - name: Parse examples
+        uses: tree-sitter/parse-action@v4
+        with:
+          files: |
+            MIPS-Linked-List/linkedList.s
+            MIPS-Assembly-Projects/*.asm
+            rcore_step_by_step/**/*.s
+            mips-asm-examples/*.asm
+            mch2022-firmware-ice40/**/*.s
+            mips-assembly-examples/*.s
+            MIPS-Assembly-Language-Examples/*.asm
+            riscv/*.s
+            arch-test/mips*.s
+            arch-test/riscv*.s
+            simple-vector-riscv/output/**/*.s
+            mips-exercises/*.asm
+          invalid-files: |
+            MIPS-Assembly-Language-Examples/mips-6-ifElseAdder.asm
+            MIPS-Assembly-Projects/GuessingGame.asm
+            mch2022-firmware-ice40/projects/RISCV-Playground/fw/forth/common/forth-core.s
+            simple-vector-riscv/output/mips_p8700_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/mips_p8700_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gc_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gc_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gcb_zve32x_zvl128b_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gcb_zve32x_zvl128b_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gcvb_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rv64gcvb_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva22u64_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva22u64_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva22u64_v_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva22u64_v_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl256b_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl256b_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl4096b_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl4096b_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl512b_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/rva23u64_zvl512b_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/sifive_p550_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/sifive_p550_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/sifive_x280_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/sifive_x280_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/spacemit_x60_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/spacemit_x60_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/tt_ascalon_d8_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/tt_ascalon_d8_g_O2/dotproduct_fp32.s
+            simple-vector-riscv/output/veyron_v1_g_O1/dotproduct_fp32.s
+            simple-vector-riscv/output/veyron_v1_g_O2/dotproduct_fp32.s

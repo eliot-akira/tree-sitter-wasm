@@ -1,0 +1,35 @@
+==========
+[directives/arguments] numeric directive without arguments
+==========
+.word
+---
+
+(program
+  (directive
+    mnemonic: (integer_mnemonic)))
+
+==========
+[directives/arguments] multiple symbols
+==========
+.foo bar baz
+---
+
+(program
+  (directive
+    mnemonic: (control_mnemonic)
+    operands: (directive_operands
+      (symbol)
+      (symbol))))
+
+==========
+[directives/arguments] comma-separated symbols
+==========
+.foo bar baz
+---
+
+(program
+  (directive
+    mnemonic: (control_mnemonic)
+    operands: (directive_operands
+      (symbol)
+      (symbol))))

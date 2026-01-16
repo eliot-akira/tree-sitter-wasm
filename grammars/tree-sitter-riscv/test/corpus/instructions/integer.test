@@ -1,0 +1,132 @@
+==========
+[instructions/integer] instruction with decimal value
+==========
+foo 100
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal))))
+
+==========
+[instructions/integer] instruction with signed integer value
+==========
+foo -100
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal))))
+
+==========
+[instructions/integer] instruction with octal value
+==========
+foo 012
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (octal))))
+
+==========
+[instructions/integer] instruction with decimal value with leading zero
+==========
+foo 089
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal))))
+
+==========
+[instructions/integer] instruction with hexadecimal value
+==========
+foo 0x0314
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (hexadecimal))))
+
+==========
+[instructions/integer] instruction with binary value
+==========
+foo 0b11
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (binary))))
+
+==========
+[instructions/integer] instruction with signed hexadecimal value
+==========
+foo -0x0123456789ABCDEFabcdef
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (hexadecimal))))
+
+==========
+[instructions/integer] instruction with char value
+==========
+foo 'A'
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (char))))
+
+==========
+[instructions/integer] instruction with escaped symbol
+==========
+foo '\n'
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (char))))
+
+==========
+[instructions/integer] instruction with escaped single quote
+==========
+foo '\''
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (char))))
+
+==========
+[instructions/integer] negative number as separate operand
+==========
+foo 1 -1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (decimal))))

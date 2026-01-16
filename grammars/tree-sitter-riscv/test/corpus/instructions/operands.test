@@ -1,0 +1,112 @@
+==========
+[instructions/operands] instruction with multiple space-separated arguments
+==========
+foo $t0 $t1 $t2
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)
+      (register)
+      (register))))
+
+==========
+[instructions/operands] instruction with multiple comma-separated arguments
+==========
+foo $t0,$t1,$t2
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)
+      (register)
+      (register))))
+
+==========
+[instructions/operands] instruction with symbol
+==========
+foo bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (symbol))))
+
+==========
+[instructions/operands] simple binary expression
+==========
+foo bar+4
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (binary_expression
+        left: (symbol)
+        operator: (additive_operator)
+        right: (decimal)))))
+
+==========
+[instructions/operands] parenthesized expression
+==========
+foo (bar+4)
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (parenthesized_expression
+        arguments: (instruction_operands
+          (binary_expression
+            left: (symbol)
+            operator: (additive_operator)
+            right: (decimal)))))))
+
+==========
+[instructions/operands] call expression
+==========
+foo(bar, baz)
+---
+
+(program
+  (call_statement
+    name: (symbol)
+    operands: (instruction_operands
+      (symbol)
+      (symbol))))
+
+==========
+[instructions/operands] instruction with string operand
+==========
+foo "bar"
+
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (string))))
+
+==========
+[instructions/operands] instruction with string operand followed by instruction
+==========
+foo "bar"
+baz
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (string)))
+  (instruction
+    mnemonic: (instruction_mnemonic)))

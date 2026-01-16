@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "riscv",
+      "camelcase": "RiscV",
+      "scope": "source.riscv",
+      "path": ".",
+      "file-types": null,
+      "highlights": "queries/highlights.scm",
+      "indents": "queries/indents.scm",
+      "injection-regex": "^riscv$"
+    }
+  ],
+  "metadata": {
+    "version": "0.3.0",
+    "license": "MIT",
+    "description": "A syntax parser for the RISC-V Instruction Set Architecture.",
+    "authors": [
+      {
+        "name": "Oskar Meyenburg",
+        "email": "omeyenburg@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/omeyenburg/tree-sitter-riscv"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

@@ -1,0 +1,119 @@
+==========
+[instructions/register] instruction with simple register
+==========
+foo $t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $0 numeric register
+==========
+foo $0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $31 numeric register
+==========
+foo $31
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $gp register
+==========
+foo $gp
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $zero register
+==========
+foo $zero
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $f0 float register
+==========
+foo $f0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] instruction with $f31 float register
+==========
+foo $f31
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] register without prefix
+==========
+foo sp
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/register] symbol starting as register without prefix
+==========
+foo space
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (symbol))))
+
+==========
+[instructions/register] RISC-V prefix
+==========
+foo x1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register))))

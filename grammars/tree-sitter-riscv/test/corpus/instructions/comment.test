@@ -1,0 +1,352 @@
+==========
+[instructions/comment] inline comment after opcode without space
+==========
+foo# bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic))
+  (comment))
+
+==========
+[instructions/comment] inline C style comment after opcode without space
+==========
+foo// bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic))
+  (comment))
+
+==========
+[instructions/comment] inline C style block comment after opcode without space
+==========
+foo/* bar */
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    (comment)))
+
+==========
+[instructions/comment] inline comment after opcode with space
+==========
+foo # bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic))
+  (comment))
+
+==========
+[instructions/comment] inline C style comment after opcode with space
+==========
+foo // bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic))
+  (comment))
+
+==========
+[instructions/comment] inline C style block comment after opcode with space
+==========
+foo /* bar */
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic))
+  (comment))
+
+==========
+[instructions/comment] inline comment after operands without space
+==========
+foo $t0# bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline C style comment after operands without space
+==========
+foo $t0// bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline C style block comment after operands without space
+==========
+foo $t0/* bar */
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline comment after operands with space
+==========
+foo $t0 # bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline C style comment after operands with space
+==========
+foo $t0 // bar
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline C style block comment after operands with space
+==========
+foo $t0 /* bar */
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)))
+  (comment))
+
+==========
+[instructions/comment] inline C style block comment before comma
+==========
+foo $t0/* bar */,$t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (register)
+      (comment)
+      (register))))
+
+==========
+[instructions/comment] inline C style block comment before operator
+==========
+foo $t0/* bar */ + $t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (binary_expression
+        left: (register)
+        (comment)
+        operator: (additive_operator)
+        right: (register)))))
+
+==========
+[instructions/comment] C style block comment between opcode and operands without space
+==========
+foo/* bar */$t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    (comment)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/comment] C style block comment between opcode and operands with space before
+==========
+foo /* bar */$t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    (comment)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/comment] C style block comment between opcode and operands with space after
+==========
+foo/* bar */ $t0
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    (comment)
+    operands: (instruction_operands
+      (register))))
+
+==========
+[instructions/comment] call expression with C style block comment after opcode
+==========
+foo/* bar */(1, 2)
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    (comment)
+    operands: (instruction_operands
+      (parenthesized_expression
+        arguments: (instruction_operands
+          (decimal)
+          (decimal))))))
+
+==========
+[instructions/comment] call expression with C style block comment before operands
+==========
+foo(/* bar */1, 2)
+---
+
+(program
+  (call_statement
+    name: (symbol)
+    (comment)
+    operands: (instruction_operands
+      (decimal)
+      (decimal))))
+
+==========
+[instructions/comment] call expression with C style block comment after operands
+==========
+foo(1, 2/* baz */)
+---
+
+(program
+  (call_statement
+    name: (symbol)
+    operands: (instruction_operands
+      (decimal)
+      (decimal))
+    (comment)))
+
+==========
+[instructions/comment] comment after operands followed by next instruction
+==========
+foo 1 # bar
+baz
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)))
+  (comment)
+  (instruction
+    mnemonic: (instruction_mnemonic)))
+
+==========
+[instructions/comment] comment after operands followed by next instruction with operand
+==========
+foo 1 # bar
+baz 1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)))
+  (comment)
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal))))
+
+==========
+[instructions/comment] hash comment between operands
+==========
+foo 1 # bar
+2
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)
+      (comment)
+      (decimal))))
+
+==========
+[instructions/comment] hash comment after operand followed by empty line
+==========
+foo 1 # bar
+
+
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)))
+  (comment))
+
+==========
+[instructions/comment] hash comment after operand followed by directive starting with number
+==========
+foo 1 # bar
+.1
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)))
+  (comment)
+  (directive
+    mnemonic: (control_mnemonic)))
+
+==========
+[instructions/comment] hash comment after operand followed by directive starting with underscore
+==========
+foo 1 # bar
+._
+---
+
+(program
+  (instruction
+    mnemonic: (instruction_mnemonic)
+    operands: (instruction_operands
+      (decimal)))
+  (comment)
+  (directive
+    mnemonic: (control_mnemonic)))
