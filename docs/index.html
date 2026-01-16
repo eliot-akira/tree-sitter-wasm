@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Sitter Wasm</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { Language, Parser } from './web-tree-sitter.js'
+      import { runExamples, exampleList } from './example.js'
+
+      const $app = document.getElementById('app')
+      let $currentResult
+      let previousResult = ''
+
+      runExamples({
+        Language,
+        Parser,
+        examples: [exampleList[0]],
+        async getExampleFile(file) {
+          return await (await fetch(`examples/${file}`)).text()
+        },
+        onEvent(e) {
+          switch (e.type) {
+            case 'start':
+              {
+                const $container = document.createElement('div')
+                const $pre = document.createElement('pre')
+                $currentResult = document.createElement('code')
+                $currentResult.innerText += `==========
+Language: ${e.lang}
+Code:
+${e.code}
+==========
+`
+                $pre.appendChild($currentResult)
+                $container.appendChild($pre)
+                $app.appendChild($container)
+              }
+              break
+            case 'node':
+              {
+                const { node } = e
+                const showText =
+                  ['number', 'identifier'].indexOf(node.type) >= 0
+
+                // $currentResult.innerText
+                previousResult += `${node.type}${
+                  showText ? ` ${node.text}` : ''
+                }\n`
+              }
+              break
+            case 'end':
+              if (previousResult) {
+                $currentResult.innerText += previousResult
+                previousResult = ''
+              }
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
