@@ -1,0 +1,252 @@
+=========================
+abstract type declaration
+=========================
+
+abstract MyAbstract<T:Int>(some.other.Some<String, T>) {}
+
+---
+
+(module
+  (AbstractType
+    name: (type_name)
+    (TypeParameter
+      name: (type_name)
+      constraint: (ComplexType
+        (TypePath
+          name: (type_name))))
+    type: (ComplexType
+      (TypePath
+        pack: (package_name)
+        pack: (package_name)
+        name: (type_name)
+        params: (ComplexType
+          (TypePath
+            name: (type_name)))
+        params: (ComplexType
+          (TypePath
+            name: (type_name)))))))
+
+==============================
+abstract enum type declaration
+==============================
+
+enum abstract Layer(Int) {
+    var a;
+    var b;
+}
+
+---
+
+(module
+  (AbstractType
+    name: (type_name)
+    type: (ComplexType
+      (TypePath
+        name: (type_name)))
+    (ClassVar
+      name: (identifier))
+    (ClassVar
+      name: (identifier))))
+
+=================
+class declaration
+=================
+
+private class A<T> {}
+
+---
+
+(module
+  (ClassType
+    name: (type_name)
+    (TypeParameter
+      name: (type_name))))
+
+=======================
+final class declaration
+=======================
+
+final class A<T> {}
+
+---
+
+(module
+  (ClassType
+    name: (type_name)
+    (TypeParameter
+      name: (type_name))))
+
+========================
+extern class declaration
+========================
+
+extern class A {}
+
+---
+
+(module
+  (ClassType
+    name: (type_name)))
+
+==========================
+abstract class declaration
+==========================
+
+abstract class A {}
+
+---
+
+(module
+  (ClassType
+    name: (type_name)))
+
+=============================
+enum declaration field params
+=============================
+
+enum Color {
+  Red;
+  Green;
+  Blue;
+  Rgb(r:Int, g:Int, b:Int);
+}
+
+---
+
+(module
+  (EnumType
+    name: (type_name)
+    (EnumConstructor
+      name: (identifier))
+    (EnumConstructor
+      name: (identifier))
+    (EnumConstructor
+      name: (identifier))
+    (EnumConstructor
+      name: (identifier)
+      args: (FunctionArg
+        name: (identifier)
+        type: (ComplexType
+          (TypePath
+            name: (type_name))))
+      args: (FunctionArg
+        name: (identifier)
+        type: (ComplexType
+          (TypePath
+            name: (type_name))))
+      args: (FunctionArg
+        name: (identifier)
+        type: (ComplexType
+          (TypePath
+            name: (type_name)))))))
+
+===================
+typedef declaration
+===================
+
+typedef A = {}
+
+---
+
+(module
+  (DefType
+    name: (type_name)
+    type: (ComplexType
+      (TAnonymous))))
+
+
+=========================
+typedef declaration alias
+=========================
+
+typedef A = B;
+
+---
+
+(module
+  (DefType
+    name: (type_name)
+    type: (ComplexType
+      (TypePath
+        name: (type_name)))))
+
+==========================
+typedef declaration extend
+==========================
+
+typedef A = {
+	> B,
+	> C,
+    x : Int
+}
+
+---
+
+(module
+  (DefType
+    name: (type_name)
+    type: (ComplexType
+      (TAnonymous
+        extends: (TypePath
+          name: (type_name))
+        extends: (TypePath
+          name: (type_name))
+        (Field
+          name: (identifier)
+          type: (ComplexType
+            (TypePath
+              name: (type_name))))))))
+
+==========================
+typedef declaration fields
+==========================
+
+typedef A = {
+  var a:Int;
+  var b:Int;
+}
+
+---
+
+(module
+  (DefType
+    name: (type_name)
+    type: (ComplexType
+      (TAnonymous
+        (ClassVar
+          name: (identifier)
+          type: (ComplexType
+            (TypePath
+              name: (type_name))))
+        (ClassVar
+          name: (identifier)
+          type: (ComplexType
+            (TypePath
+              name: (type_name))))))))
+
+=============================
+typedef declaration anon fields
+=============================
+
+typedef A = {
+  a:Int,
+  b:Int
+}
+
+---
+
+(module
+  (DefType
+    name: (type_name)
+    type: (ComplexType
+      (TAnonymous
+        (Field
+          name: (identifier)
+          type: (ComplexType
+            (TypePath
+              name: (type_name))))
+        (Field
+          name: (identifier)
+          type: (ComplexType
+            (TypePath
+              name: (type_name))))))))

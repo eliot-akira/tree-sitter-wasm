@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - grammar.js
+      - queries/**
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+      - examples/**
+      - .github/workflows/**
+  pull_request:
+    paths:
+      - grammar.js
+      - queries/**
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+      - examples/**
+      - .github/workflows/**
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: tree-sitter/setup-action/cli@v2
+      - name: Generate and commit parser
+        run: |
+          tree-sitter generate
+          #git add src/parser.c src/scanner.c || true
+          git add src/parser.c || true
+          git commit -m "Update generated parser" || true
+      # - name: Install build tools
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y build-essential
+      #     npm install -g node-gyp
+      #     npm install node-addon-api
+      # - name: Build Node binding
+      #   run: node-gyp configure build
+      - uses: tree-sitter/parser-test-action@v3
+        with:
+          test-go: true
+          # test-node: true
+          # test-python: true
+          # test-rust: true
+          # test-swift: true
+  parse:
+    name: Parse example Haxe files
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ always() }} # still runs even if tests fail (for debugging)
+    steps:
+      - uses: actions/checkout@v5
+      - uses: tree-sitter/setup-action/cli@v2
+      - name: Build parser
+        run: tree-sitter generate
+      - name: Parse examples
+        shell: bash
+        run: |
+          set -e
+          echo "Parsing all example .hx files..."
+          if [ ! -d examples ]; then
+            echo "No examples directory found, skipping."
+            exit 0
+          fi
+          find examples -type f -name "*.hx" | while read -r file; do
+            echo "::group::Parsing $file"
+            if ! tree-sitter parse "$file" > /tmp/out.txt 2>&1; then
+              echo "❌ Failed to parse $file"
+              cat /tmp/out.txt
+              exit 1
+            fi
+            echo "✅ Parsed successfully: $file"
+            echo "::endgroup::"
+          done

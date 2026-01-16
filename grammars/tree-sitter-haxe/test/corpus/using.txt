@@ -1,0 +1,38 @@
+==========
+using type
+==========
+
+using Type;
+
+---
+
+(module
+  (using
+    (type_name)))
+
+===============
+using type path
+===============
+
+using some.any.Type;
+
+---
+
+(module
+  (using
+    (package_name)
+    (package_name)
+    (type_name)))
+
+==============
+using sub type
+==============
+
+using Main.IntExtender;
+
+---
+
+(module
+  (using
+    (type_name)
+    (type_name)))

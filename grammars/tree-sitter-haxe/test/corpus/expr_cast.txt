@@ -1,0 +1,26 @@
+===============
+cast expression
+===============
+
+cast a;
+
+---
+
+(module
+  (ECast
+    (identifier)))
+
+==================
+cast expression to
+==================
+
+cast(a, String);
+
+---
+
+(module
+  (ECast
+    expr: (identifier)
+    type: (ComplexType
+      (TypePath
+        name: (type_name)))))

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tong/tree-sitter-haxe
+	branch = main
+	commit = cd22e75fd9e80cc1752854be1a3aac22b08f82c7
+	parent = cce98f932825667c4874e05629a6529028ad302c
+	method = merge
+	cmdver = 0.4.6

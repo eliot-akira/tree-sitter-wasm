@@ -1,0 +1,110 @@
+===========================
+array comprehension: for if
+===========================
+
+var a = [
+	for (a in 1...11)
+		for (b in 2...4)
+			if (a % b == 0)
+				a + "/" + b
+];
+
+---
+
+(module
+  (EVars
+    name: (identifier)
+    value: (EArrayDecl
+      (EFor
+        var: (identifier)
+        iterable: (EBinop
+          left: (Int)
+          right: (Int))
+        body: (EFor
+          var: (identifier)
+          iterable: (EBinop
+            left: (Int)
+            right: (Int))
+          body: (EIf
+            cond: (EBinop
+              left: (EBinop
+                left: (identifier)
+                right: (identifier))
+              right: (Int))
+            if: (EBinop
+              left: (EBinop
+                left: (identifier)
+                right: (String
+                  (fragment)))
+              right: (identifier))))))))
+
+==========================
+array comprehension: while
+==========================
+
+[while (i < 10) i++];
+
+---
+
+(module
+  (EArrayDecl
+    (EWhile
+      cond: (EBinop
+        left: (identifier)
+        right: (Int))
+      body: (EUnop
+        operand: (identifier)))))
+
+=========================
+map comprehension: for if
+=========================
+
+var a = [
+  for (x in 0...5)
+    for (y in 0...5)
+      if (x != y)
+        x => y
+];
+
+---
+
+(module
+  (EVars
+    name: (identifier)
+    value: (EArrayDecl
+      (EFor
+        var: (identifier)
+        iterable: (EBinop
+          left: (Int)
+          right: (Int))
+        body: (EFor
+          var: (identifier)
+          iterable: (EBinop
+            left: (Int)
+            right: (Int))
+          body: (EIf
+            cond: (EBinop
+              left: (identifier)
+              right: (identifier))
+            if: (EBinop
+              left: (identifier)
+              right: (identifier))))))))
+
+========================
+map comprehension: while
+========================
+
+[while (i < 5) i++ => i];
+
+---
+
+(module
+  (EArrayDecl
+    (EWhile
+      cond: (EBinop
+        left: (identifier)
+        right: (Int))
+      body: (EBinop
+        left: (EUnop
+          operand: (identifier))
+        right: (identifier)))))

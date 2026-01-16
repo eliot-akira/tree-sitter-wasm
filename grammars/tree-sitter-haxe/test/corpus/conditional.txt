@@ -1,0 +1,133 @@
+=======================
+conditional compilation
+=======================
+
+#if debug
+#elseif !other
+#elseif another
+#elseif (debug_level > 3)
+#elseif 0 == 0
+#elseif 0 != 0
+#elseif 0 > 0
+#elseif 0 < 0
+#elseif 0 <= 0
+#elseif 0 >= 0
+#elseif (a && b)
+#elseif (a || b) && ( c > d || (e!=f))
+#else
+#end
+
+---
+
+(module
+  (conditional
+    (compile_condition
+      (identifier))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (identifier))))
+    (conditional_elseif
+      (compile_condition
+        (identifier)))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (compile_condition
+            (identifier))
+          (compile_condition
+            (Int)))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (Int))
+        (compile_condition
+          (Int))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (compile_condition
+            (identifier))
+          (compile_condition
+            (identifier)))))
+    (conditional_elseif
+      (compile_condition
+        (compile_condition
+          (compile_condition
+            (compile_condition
+              (identifier))
+            (compile_condition
+              (identifier))))
+        (compile_condition
+          (compile_condition
+            (compile_condition
+              (compile_condition
+                (identifier))
+              (compile_condition
+                (identifier)))
+            (compile_condition
+              (compile_condition
+                (compile_condition
+                  (identifier))
+                (compile_condition
+                  (identifier))))))))
+    (conditional_else)
+    (conditional_end)))
+
+===================================
+conditional compilation with macros
+===================================
+
+#if !macro
+@:build(my.App.build())
+#end
+class A {}
+
+---
+
+(module
+  (conditional
+    (compile_condition
+      (compile_condition
+        (identifier)))
+    (MetaDataEntry
+      name: (identifier)
+      params: (ECall
+        callee: (EField
+          object: (EField
+            object: (identifier)
+            name: (identifier))
+          name: (identifier))))
+    (conditional_end))
+  (ClassType
+    name: (type_name)))

@@ -1,0 +1,93 @@
+===============================================================================
+macro constant expression
+===============================================================================
+
+macro 42;
+
+---
+
+(module
+  (macro (Int)))
+
+===============================================================================
+macro
+===============================================================================
+
+macro 1 + 2;
+
+---
+
+(module
+  (macro
+    (EBinop
+      left: (Int)
+      right: (Int))))
+
+
+===============================================================================
+macro expression value reification
+===============================================================================
+
+macro $v{someExpr};
+
+---
+
+(module
+  (macro
+    (reification
+      (identifier))))
+
+
+===============================================================================
+macro compile‐time value refication
+===============================================================================
+
+macro { trace("hi"); };
+macro $v{myValue};
+macro $a{1, 2, 3};
+macro $b{ trace(1); trace(2); };
+macro $i{name};
+macro $p{x, y, z};
+macro $v{v} * 2;
+
+---
+
+(module
+  (macro
+    (EBlock
+      (ECall
+        callee: (identifier)
+        args: 
+          (String
+            (fragment)))))
+  (macro
+    (reification
+      (identifier)))
+  (macro
+    (reification
+        (Int)
+        (Int)
+        (Int)))
+  (macro
+    (reification
+      (ECall
+        callee: (identifier)
+        args: 
+          (Int))
+      (ECall
+        callee: (identifier)
+        args: 
+          (Int))))
+  (macro
+    (reification
+      (identifier)))
+  (macro
+    (reification
+      (identifier)
+      (identifier)
+      (identifier)))
+  (macro
+    (EBinop
+      left: (reification
+        (identifier))
+      right: (Int))))

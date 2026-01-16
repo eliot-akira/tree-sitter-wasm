@@ -1,0 +1,133 @@
+===================
+binop add operator
+===================
+
+1 + 2;
+
+---
+
+(module
+  (EBinop
+    left: (Int)
+    right: (Int)))
+
+
+===================
+binop operation
+===================
+
+1 + 2 * 3 % 2;
+
+---
+
+(module
+  (EBinop
+    left: (Int)
+    right: (EBinop
+      left: (EBinop
+        left: (Int)
+        right: (Int))
+      right: (Int))))
+
+====================================
+binop string concatenation operator
+====================================
+
+"a" + "b";
+
+---
+
+(module
+  (EBinop
+    left: 
+      (String
+        (fragment))
+    right: 
+      (String
+        (fragment))))
+
+============================================
+binop string and int concatenation operator
+============================================
+
+"a" + 1;
+
+---
+
+(module
+  (EBinop
+    left: (String (fragment))
+    right: (Int)))
+
+============================================
+binop int and string concatenation operator
+============================================
+
+1 + "a";
+
+---
+
+(module
+  (EBinop
+    left: (Int)
+    right: 
+      (String
+        (fragment))))
+
+===============================================
+binop string and is int concatenation operator
+===============================================
+
+"a" += "b";
+
+---
+
+(module
+  (EBinop
+    left: 
+      (String
+        (fragment))
+    right: 
+      (String
+        (fragment))))
+
+===================
+binop logical or operator
+===================
+
+true || false;
+
+---
+
+(module
+  (EBinop
+    left: (true)
+    right: (false)))
+
+====================
+binop logical and operator
+====================
+
+true && false;
+
+---
+
+(module
+  (EBinop
+    left: (true)
+    right: (false)))
+
+=====================
+binop null coalescing
+=====================
+
+value ?? "fallback"
+
+---
+
+(module
+  (EBinop
+    left: (identifier)
+    right: 
+      (String
+        (fragment))))

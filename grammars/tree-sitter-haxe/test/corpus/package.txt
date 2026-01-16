@@ -1,0 +1,23 @@
+=============
+empty package
+=============
+
+package;
+
+---
+
+(module (package))
+
+=============
+package parts
+=============
+
+package my.other.pkg;
+
+---
+
+(module
+  (package
+    (package_name)
+    (package_name)
+    (package_name)))
