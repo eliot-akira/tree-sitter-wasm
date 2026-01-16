@@ -1,0 +1,21 @@
+{
+  "name": "tree-sitter-pug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bindings/node",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter generate && tree-sitter test",
+    "test:debug": "tree-sitter generate && tree-sitter test --debug"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.22.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.4"
+  },
+  "packageManager": "yarn@4.5.1"
+}

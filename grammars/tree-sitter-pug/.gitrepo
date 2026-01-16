@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/codepen/tree-sitter-pug
+	branch = master
+	commit = 60a463fd725afd034045496b9018fa4a081469fd
+	parent = 5e0bee636e90007392f64739c567b17d36e11b8b
+	method = merge
+	cmdver = 0.4.6
