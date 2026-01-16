@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/uben0/tree-sitter-typst
+	branch = master
+	commit = 46cf4ded12ee974a70bf8457263b67ad7ee0379d
+	parent = 47b5c36232f4cc0521d7e2539c6ab1b0ea608ae5
+	method = merge
+	cmdver = 0.4.6
