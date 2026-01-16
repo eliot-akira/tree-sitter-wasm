@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/acristoffers/tree-sitter-matlab
+	branch = main
+	commit = f3eef66526fdae0469207d8e561fb5771eea1721
+	parent = 27218cb4acaae1a3524b99d4ad143f941ea65e19
+	method = merge
+	cmdver = 0.4.6
