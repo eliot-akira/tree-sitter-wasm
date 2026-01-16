@@ -19,7 +19,7 @@ for (const lang of [
   'd',
   'dart',
   'diff',
-  'djot',
+  // 'djot', // "external scanner uses a symbol that isn't available to Wasm parsers"
   'dockerfile',
   'elisp',
   // 'diff',
@@ -83,6 +83,7 @@ for (const lang of [
   'toml',
   'tsv',
   'typescript',
+  'typst',
   'uxntal',
   'wat',
   'xml',
@@ -108,10 +109,14 @@ for (const lang of [
   }
 
   const folderName =
-    lang === 'csv' || lang === 'psv' || lang === 'tsv'
+    lang === 'asciidoc'
+      ? `tree-sitter-asciidoc/tree-sitter-asciidoc`
+      : lang === 'csv' || lang === 'psv' || lang === 'tsv'
       ? `tree-sitter-csv/${lang}`
       : lang === 'dart'
       ? `@sengac/tree-sitter-dart`
+      : lang === 'fsharp'
+      ? `tree-sitter-fsharp/fsharp`
       : lang === 'latex'
       ? `@pfoerster/tree-sitter-latex`
       : lang === 'lilypond' || lang === 'lilypond-scheme'
@@ -128,6 +133,8 @@ for (const lang of [
       ? `@derekstride/tree-sitter-sql`
       : lang === 'strudel'
       ? `tree-sitter-strdl`
+      : lang === 'typst'
+      ? `./grammars/tree-sitter-typst`
       : // Under org @tree-sitter-grammars
       lang === 'lua' ||
         // lang === 'markdown' ||
@@ -138,7 +145,9 @@ for (const lang of [
       : lang === 'xml'
       ? `@tree-sitter-grammars/tree-sitter-xml/xml`
       : `tree-sitter-${lang}`
-  for await (const line of $`bunx tree-sitter build --wasm node_modules/${folderName} --output ${targetFile}`.lines()) {
+  for await (const line of $`bunx tree-sitter build --wasm ${
+    folderName.startsWith('./') ? '.' : 'node_modules'
+  }/${folderName.replace(/^\.\//, '')} --output ${targetFile}`.lines()) {
     if (line.trim()) console.log(line)
   }
 }
