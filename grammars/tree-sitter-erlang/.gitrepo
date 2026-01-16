@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/WhatsApp/tree-sitter-erlang
+	branch = main
+	commit = f21023bbd6cd30cadbc793d80ae4d990d9be86fc
+	parent = 8038cb39fdd095df3dc3fab737fb8bcc4e88521e
+	method = merge
+	cmdver = 0.4.6
