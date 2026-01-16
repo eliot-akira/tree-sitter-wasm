@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/camdencheek/tree-sitter-dockerfile
+	branch = main
+	commit = 971acdd908568b4531b0ba28a445bf0bb720aba5
+	parent = d9f0bd8c94beea0ff117140d9e073c0a78bd1919
+	method = merge
+	cmdver = 0.4.6
