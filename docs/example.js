@@ -8,6 +8,7 @@ export const exampleList = [
   ['c-sharp', '.cs'],
   ['css', '.css'],
   ['csv', '.csv'],
+  // ['d', '.d'],
   ['dart', '.dart'],
   ['diff', '.diff'],
   ['elisp', '.el'],
