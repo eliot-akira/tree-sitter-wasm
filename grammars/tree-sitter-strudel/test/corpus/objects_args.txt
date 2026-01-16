@@ -1,0 +1,51 @@
+==================
+objects_args
+==================
+
+$: note("<[D@3 A@2 ~ D@2]>".add("12,24"))
+  ._pitchwheel({edo:10,hapRadius:3,thickness:3,circle:1})
+
+---
+
+(source_file
+	(assignment
+		(expression
+			(chained_method
+				(function_call
+					(identifier)
+					(expression
+						(chained_method
+							(string)
+							(method_call
+								(identifier)
+								(expression
+									(string))))))
+				(method_call
+					(identifier)
+					(expression
+						(object
+							(pair
+								(identifier)
+								(expression
+									(number)))
+							(pair
+								(identifier)
+								(expression
+									(number)))
+							(pair
+								(identifier)
+								(expression
+									(number)))
+							(pair
+								(identifier)
+								(expression
+									(number)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)

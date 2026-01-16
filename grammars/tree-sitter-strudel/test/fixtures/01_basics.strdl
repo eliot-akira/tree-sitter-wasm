@@ -1,0 +1,9 @@
+// comments
+s("bd sn")
+n("0 3 5")
+gain("0.8")
+
+scale("minor")
+note("0 2 4")
+arp("up")
+pan("0 1")

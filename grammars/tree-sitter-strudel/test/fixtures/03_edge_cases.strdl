@@ -1,0 +1,9 @@
+// multiple string args
+cat("bd sn", "hh*2")
+
+// method vs non-pattern function
+foo("not special").bar("also not special")
+
+// booleans and assignment
+var flag = true;
+gain("0.9")

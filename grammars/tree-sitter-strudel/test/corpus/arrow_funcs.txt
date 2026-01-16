@@ -1,0 +1,65 @@
+==================
+arrow_funcs
+==================
+
+let m2 =
+	note("<[D@3 A@2 ~ D@2] [Cs@2 ~ A@2 ~ Cs@2]>")
+  .layer(
+    x => x.s("gm_kalimba:3").postgain(2), 
+    x => x.s("gm_acoustic_guitar_steel:6").postgain(1), 
+  ).fast(2)
+
+----
+
+ (source_file
+	(lexical_declaration
+		(variable_declarator
+			(identifier)
+			(expression
+				(chained_method
+					(function_call
+						(identifier)
+						(expression
+							(string)))
+					(method_call
+						(identifier)
+						(expression
+							(arrow_function
+								(identifier)
+								(expression
+									(chained_method
+										(identifier)
+										(method_call
+											(identifier)
+											(expression
+												(string)))
+										(method_call
+											(identifier)
+											(expression
+												(number)))))))
+						(expression
+							(arrow_function
+								(identifier)
+								(expression
+									(chained_method
+										(identifier)
+										(method_call
+											(identifier)
+											(expression
+												(string)))
+										(method_call
+											(identifier)
+											(expression
+												(number))))))))
+					(method_call
+						(identifier)
+						(expression
+							(number)
+						)
+					)
+				)
+			)
+		)
+	)
+)
+

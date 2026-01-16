@@ -1,0 +1,19 @@
+==================
+variable_var
+==================
+
+var Zedro = 666
+
+---
+
+(source_file
+	(variable_declaration
+		(variable_declarator
+			(identifier)
+			(expression
+				(number)
+			)
+		)
+	)
+)
+

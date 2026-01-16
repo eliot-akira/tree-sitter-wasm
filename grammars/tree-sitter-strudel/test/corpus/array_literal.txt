@@ -1,0 +1,37 @@
+==================
+array_literal
+==================
+
+$:arrange(
+  [2,stack(m1,dr)],
+)
+
+----
+
+(source_file
+	(assignment
+		(expression
+			(function_call
+				(identifier)
+				(expression
+					(array
+						(expression
+							(number)
+						)
+						(expression
+							(function_call 
+								(identifier)
+								(expression
+									(identifier)
+								)
+								(expression
+									(identifier)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)

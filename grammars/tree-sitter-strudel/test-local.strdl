@@ -1,0 +1,8 @@
+// test.strudel
+setCps(120/60/4)
+
+$: s("bd hh sd hh").gain(0.8)
+
+sample1: sound("808").lpf(400).delay(0.3)
+
+notes("c3 eb3 g3").slow(2).reverb(0.4)

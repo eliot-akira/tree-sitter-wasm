@@ -1,0 +1,77 @@
+==================
+Empty arguments
+==================
+
+s()
+
+---
+
+(source_file
+  (expression
+    (function_call
+      (identifier))))
+
+==================
+Trailing commas in arguments
+==================
+
+s("bd",)
+
+---
+
+(source_file
+  (expression
+    (function_call
+      (identifier)
+      (expression
+        (string)))))
+
+==================
+Trailing commas in array
+==================
+
+[1, 2,]
+
+---
+
+(source_file
+  (expression
+    (array
+      (expression (number))
+      (expression (number)))))
+
+==================
+Trailing commas in object
+==================
+
+{a: 1, b: 2,}
+
+---
+
+(source_file
+  (expression
+    (object
+      (pair
+        key: (identifier)
+        value: (expression (number)))
+      (pair
+        key: (identifier)
+        value: (expression (number))))))
+
+==================
+Nested calls
+==================
+
+s(s("bd"))
+
+---
+
+(source_file
+  (expression
+    (function_call
+      (identifier)
+      (expression
+        (function_call
+          (identifier)
+          (expression
+            (string)))))))

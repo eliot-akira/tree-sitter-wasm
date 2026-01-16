@@ -1,0 +1,33 @@
+==================
+chained_function_call
+==================
+
+s("hh*8").gain(.5)
+	.attack(.01)
+
+---
+
+(source_file
+	(expression
+		(chained_method
+			(function_call
+				(identifier)
+				(expression
+					(string)
+				)
+			)
+			(method_call
+				(identifier)
+					(expression
+					(number)
+				)
+			)
+			(method_call
+				(identifier)
+				(expression
+					(number)
+				)
+			)
+		)
+	)
+)

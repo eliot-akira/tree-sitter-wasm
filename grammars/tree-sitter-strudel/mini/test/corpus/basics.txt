@@ -1,0 +1,98 @@
+==================
+Basic steps
+==================
+
+bd sn
+
+---
+
+(source_file
+  (step (identifier))
+  (step (identifier)))
+
+==================
+Group
+==================
+
+[bd sn]
+
+---
+
+(source_file
+  (group
+    (step (identifier))
+    (step (identifier))))
+
+==================
+Polyphony (Stack)
+==================
+
+[bd, sn]
+
+---
+
+(source_file
+  (polyphony
+    (step (identifier))
+    (step (identifier))))
+
+==================
+Alternation
+==================
+
+<bd sn>
+
+---
+
+(source_file
+  (alternation
+    (step (identifier))
+    (step (identifier))))
+
+==================
+Polymeter
+==================
+
+{bd sn, cp}
+
+---
+
+(source_file
+  (polymeter
+    (step (identifier))
+    (step (identifier))
+    (step (identifier))))
+
+==================
+Speed modifiers
+==================
+
+bd*2 sn/4
+
+---
+
+(source_file
+  (step
+    (identifier)
+    (modifier
+      (speed_modifier (number))))
+  (step
+    (identifier)
+    (modifier
+      (speed_modifier (number)))))
+
+==================
+Euclidean modifiers
+==================
+
+bd(3,8)
+
+---
+
+(source_file
+  (step
+    (identifier)
+    (modifier
+      (euclidean_modifier
+        (number)
+        (number)))))

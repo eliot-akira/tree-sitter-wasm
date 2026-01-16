@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: tree-sitter-strudel
+Description: 
+URL: https://github.com/pedrozappa/tree-sitter-strdl
+Version: 1.1.1
+Libs: -L${libdir} -ltree-sitter-strudel
+Cflags: -I${includedir}
