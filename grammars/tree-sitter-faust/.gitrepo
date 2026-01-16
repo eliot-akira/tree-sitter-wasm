@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/khiner/tree-sitter-faust
+	branch = main
+	commit = 122dd101919289ea809bad643712fcb483a1bed0
+	parent = 8fb06995b94dfc6a79f43cac2904617f1542fc04
+	method = merge
+	cmdver = 0.4.6
