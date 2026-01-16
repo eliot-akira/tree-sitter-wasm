@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/6cdh/tree-sitter-scheme
+	branch = main
+	commit = b5c701148501fa056302827442b5b4956f1edc03
+	parent = f11ce82e3157279a42b27694018ced4d853dac74
+	method = merge
+	cmdver = 0.4.6
