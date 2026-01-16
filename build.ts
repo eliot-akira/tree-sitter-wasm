@@ -2,6 +2,11 @@ import { $ } from 'bun'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+const bundledGrammars = (await $`ls -d grammars/tree-sitter-*`.text())
+  .split('\n')
+  .filter((s) => s.trim())
+  .map((s) => s.replace(`grammars/tree-sitter-`, ''))
+
 for (const lang of [
   'ada',
   'asciidoc',
@@ -94,7 +99,7 @@ for (const lang of [
 
   try {
     await fs.access(targetFile)
-    console.log('Target exists:', targetFile)
+    console.log('Already compiled:', lang)
     continue
   } catch (e) {
     // Fall-through to actually compile
@@ -108,46 +113,49 @@ for (const lang of [
     continue
   }
 
-  const folderName =
+  let folderName = bundledGrammars.includes(lang)
+    ? `./grammars/tree-sitter-${lang}`
+    : ''
+  folderName = 
     lang === 'asciidoc'
-      ? `tree-sitter-asciidoc/tree-sitter-asciidoc`
-      : lang === 'csv' || lang === 'psv' || lang === 'tsv'
-      ? `tree-sitter-csv/${lang}`
-      : lang === 'dart'
-      ? `@sengac/tree-sitter-dart`
-      : lang === 'fsharp'
-      ? `tree-sitter-fsharp/fsharp`
-      : lang === 'latex'
-      ? `@pfoerster/tree-sitter-latex`
-      : lang === 'lilypond' || lang === 'lilypond-scheme'
-      ? `tree-sitter-lilypond/${lang}`
-      : lang === 'markdown' || lang === 'markdown-inline'
-      ? `@tree-sitter-grammars/tree-sitter-markdown/tree-sitter-${lang}`
-      : lang === 'matlab'
-      ? `@acristoffers/tree-sitter-matlab`
-      : lang === 'prolog'
-      ? `tree-sitter-prolog/grammars/prolog`
-      : lang === 'r'
-      ? `@eagleoutice/tree-sitter-r`
-      : lang === 'sql'
-      ? `@derekstride/tree-sitter-sql`
-      : lang === 'strudel'
-      ? `tree-sitter-strdl`
-      : lang === 'typst'
-      ? `./grammars/tree-sitter-typst`
-      : // Under org @tree-sitter-grammars
-      lang === 'lua' ||
-        // lang === 'markdown' ||
-        // lang === 'xml' ||
-        lang === 'yaml' ||
-        lang === 'zig'
-      ? `@tree-sitter-grammars/tree-sitter-${lang}`
-      : lang === 'xml'
-      ? `@tree-sitter-grammars/tree-sitter-xml/xml`
-      : `tree-sitter-${lang}`
+    ? `${folderName}/tree-sitter-asciidoc`
+    : lang === 'csv' || lang === 'psv' || lang === 'tsv'
+    ? `tree-sitter-csv/${lang}`
+    : lang === 'dart'
+    ? `@sengac/tree-sitter-dart`
+    : lang === 'fsharp'
+    ? `${folderName}/fsharp`
+    : lang === 'latex'
+    ? `@pfoerster/tree-sitter-latex`
+    : lang === 'lilypond' || lang === 'lilypond-scheme'
+    ? `${folderName}/${lang}`
+    : lang === 'markdown' || lang === 'markdown-inline'
+    ? `@tree-sitter-grammars/tree-sitter-markdown/tree-sitter-${lang}`
+    // : lang === 'matlab'
+    // ? `${folderName}/tree-sitter-matlab`
+    : lang === 'prolog'
+    ? `${folderName}/grammars/prolog`
+    // : lang === 'r'
+    // ? `${folderName}/tree-sitter-r`
+    : lang === 'sql'
+    ? `@derekstride/tree-sitter-sql`
+    : // : lang === 'strudel'
+    // ? `tree-sitter-strdl`
+    // Under org @tree-sitter-grammars
+    lang === 'lua' ||
+      // lang === 'markdown' ||
+      // lang === 'xml' ||
+      lang === 'yaml' ||
+      lang === 'zig'
+    ? `@tree-sitter-grammars/tree-sitter-${lang}`
+    : lang === 'xml'
+    ? `@tree-sitter-grammars/tree-sitter-xml/xml`
+    : (folderName || `tree-sitter-${lang}`)
+
   for await (const line of $`bunx tree-sitter build --wasm ${
-    folderName.startsWith('./') ? '.' : 'node_modules'
-  }/${folderName.replace(/^\.\//, '')} --output ${targetFile}`.lines()) {
+    (folderName.startsWith('./') ? '' : 'node_modules/') +
+    folderName.replace(/^\.\//, '')
+  } --output ${targetFile}`.lines()) {
     if (line.trim()) console.log(line)
   }
 }
