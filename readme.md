@@ -16,7 +16,7 @@ This is the [tree-sitter](https://github.com/tree-sitter/tree-sitter/) parser an
 - `bash`
 - `c-sharp`
 - `c`
-= `clojure`
+- `clojure`
 - `commonlisp`
 - `cpp`
 - `css`
