@@ -1,0 +1,54 @@
+<!-- This is a comment. It must not contain two consecutive hyphens (-). -->
+<!-- Comments can span
+  multiple lines -->
+
+<!-- Elements -->
+<!-- An element is a basic XML component. There are two types, empty: -->
+<element1 attribute="value" /> <!-- Empty elements do not hold any content -->
+<!-- and non-empty: -->
+<element2 attribute="value">Content</element2>
+<!-- Element names may only contain alphabets and numbers. -->
+
+<empty /> <!-- An element either consists an empty element tag… -->
+<!-- …which does not hold any content and is pure markup. -->
+
+<notempty> <!-- Or, it consists of a start tag… -->
+  <!-- …some content… -->
+</notempty> <!-- and an end tag. -->
+
+<!-- Element names are case sensitive. -->
+<element />
+<!-- is not the same as -->
+<eLEMENT />
+
+<!-- Attributes -->
+<!-- An attribute is a key-value pair and exists within an element. -->
+<element attribute="value" another="anotherValue" many="space-separated list" />
+<!-- An attribute may appear only once in an element. It holds just one value.
+  Common workarounds to this involve the use of space-separated lists. -->
+
+<!-- Nesting elements -->
+<!-- An element's content may include other elements: -->
+<parent>
+  <child>Text</child>
+  <emptysibling />
+</parent>
+<!-- Standard tree nomenclature is followed. Each element being called a node.
+  An ancestor a level up is the parent, descendants a level down are children.
+  Elements within the same parent element are siblings. -->
+
+<!-- XML preserves whitespace. -->
+<child>
+  Text
+</child>
+<!-- is not the same as -->
+<child>Text</child>
+
+<bookstore>
+  <book category="COOKING">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+</bookstore>

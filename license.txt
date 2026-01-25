@@ -1,0 +1,101 @@
+MIT License (MIT) - Copyright (c) 2026 Eliot Akira
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+
+- [ada](https://github.com/briot/tree-sitter-ada) Copyright (c) 2023 Emmanuel Briot
+- [arduino](https://github.com/tree-sitter-grammars/tree-sitter-arduino) Copyright (c) 2022 ObserverOfTime
+- [asciidoc](https://github.com/cathaysia/tree-sitter-asciidoc) Apache License 2.0 
+- [awk](https://github.com/Beaglefoot/tree-sitter-awk) Copyright (c) 2021 Stanislav Chernov
+- [bash](https://github.com/tree-sitter/tree-sitter-bash) Copyright (c) 2017 Max Brunsfeld
+- [c-sharp](https://github.com/tree-sitter/tree-sitter-c-sharp) Copyright (c) 2014-2023 Max Brunsfeld, Damien Guard, Amaan Qureshi, and contributors.
+- [c](https://github.com/tree-sitter/tree-sitter-c) Copyright (c) 2014 Max Brunsfeld
+- [clojure](https://github.com/sogaiu/tree-sitter-clojure) doc/credits.md
+- [cmake](https://github.com/uyha/tree-sitter-cmake) Copyright (c) 2025 Uy Ha
+- [commonlisp](https://github.com/theHamsta/tree-sitter-commonlisp) Copyright (c) 2021 Stephan Seitz
+- [Copyright](Copyright) (c) 2019 Max Brunsfeld, Amaan Qureshi, Christian Frøystad, Caleb White
+- [cpp](https://github.com/tree-sitter/tree-sitter-cpp) Copyright (c) 2014 Max Brunsfeld
+- [css](https://github.com/tree-sitter/tree-sitter-css) Copyright (c) 2018 Max Brunsfeld
+- [csv](https://github.com/tree-sitter-grammars/tree-sitter-csv) Copyright (c) 2023 Amaan Qureshi
+- [dart](https://github.com/sengac/tree-sitter-dart) Copyright (c) 2020-2023 UserNobody14 and others
+- [diff](https://github.com/tree-sitter-grammars/tree-sitter-diff) Copyright (c) 2021 Michael Davis
+- [djot](https://github.com/treeman/tree-sitter-djot) Copyright (c) 2024 Jonas Hietala
+- [dockerfile](https://github.com/camdencheek/tree-sitter-dockerfile) Copyright (c) 2021 Camden Cheek
+- [elisp](https://github.com/Wilfred/tree-sitter-elisp) Copyright (c) 2021 Wilfred Hughes
+- [elixir](https://github.com/elixir-lang/tree-sitter-elixir) Apache License 2.0 
+- [elm](https://github.com/elm-tooling/tree-sitter-elm) Copyright (c) 2018 Kolja Lampe
+- [elsa](https://github.com/glapa-grossklag/tree-sitter-elsa) Copyright (c) Miles Glapa-Grossklag
+- [embedded-template](https://github.com/tree-sitter/tree-sitter-embedded-template) Copyright (c) 2018 Max Brunsfeld
+- [erlang](https://github.com/WhatsApp/tree-sitter-erlang) Apache License 2.0 
+- [faust](https://github.com/khiner/tree-sitter-faust) Copyright (c) 2024 Karl Hiner
+- [fennel](https://github.com/alexmozaidze/tree-sitter-fennel) Creative Commons 1.0 Universal
+- [forth](https://github.com/AlexanderBrevig/tree-sitter-forth) Copyright (c) 2023 AlexanderBrevig
+- [fsharp](https://github.com/AlexanderBrevig/tree-sitter-forth) Copyright (c) 2023 Nikolaj Sidorenco
+- [glsl](https://github.com/tree-sitter-grammars/tree-sitter-glsl) Copyright (c) 2014 Max Brunsfield
+- [go](https://github.com/tree-sitter/tree-sitter-go) Copyright (c) 2014 Max Brunsfeld
+- [haskell](https://github.com/tree-sitter/tree-sitter-haskell) Copyright (c) 2014 Max Brunsfeld
+- [haxe](https://github.com/tong/tree-sitter-haxe) Copyright (c) tong
+- [html](https://github.com/tree-sitter/tree-sitter-html) Copyright (c) 2014 Max Brunsfeld
+- [janet](https://github.com/GrayJack/tree-sitter-janet) Copyright (c) 2020, Eric Shimizu Karbstein
+- [java](https://github.com/tree-sitter/tree-sitter-java) Copyright (c) 2017 Ayman Nadeem
+- [javascript](https://github.com/tree-sitter/tree-sitter-javascript) Copyright (c) 2014 Max Brunsfeld
+- [jsdoc](https://github.com/tree-sitter/tree-sitter-jsdoc) Copyright (c) 2018 Max Brunsfeld
+- [json](https://github.com/tree-sitter/tree-sitter-json) Copyright (c) 2014 Max Brunsfeld
+- [json5](https://github.com/Joakker/tree-sitter-json5) Copyright (c) 2021 Joaquín Andrés León Ulloa
+- [jsonnet](https://github.com/sourcegraph/tree-sitter-jsonnet) Copyright (c) 2022 Sourcegraph
+- [julia](https://github.com/tree-sitter/tree-sitter-julia) Copyright (c) 2018 Max Brunsfeld, GitHub
+- [kotlin](https://github.com/fwcd/tree-sitter-kotlin) Copyright (c) 2019 fwcd
+- [latex](https://github.com/latex-lsp/tree-sitter-latex) Copyright (c) 2021 Patrick Förster
+- [lilypond](https://github.com/nwhetsell/tree-sitter-lilypond) Copyright © Nathan Whetsell
+- [lua](https://github.com/tree-sitter-grammars/tree-sitter-lua) Copyright (c) 2021 Munif Tanjim
+- [make](https://github.com/tree-sitter-grammars/tree-sitter-make) Copyright (c) 2021 Alexandre A. Muller
+- [markdown](https://github.com/tree-sitter-grammars/tree-sitter-markdown) Copyright (c) 2021 Matthias Deiml
+- [matlab](https://github.com/acristoffers/tree-sitter-matlab) Copyright (c) 2023 Álan Crístoffer
+- [nix](https://github.com/nix-community/tree-sitter-nix) Copyright (c) 2019 Charles Strahan
+- [ocaml](https://github.com/tree-sitter/tree-sitter-ocaml) Copyright (c) 2020 Max Brunsfeld and Pieter Goetschalckx
+- [odin](https://github.com/tree-sitter-grammars/tree-sitter-odin) Copyright (c) 2023 Amaan Qureshi
+- [pascal](https://github.com/Isopod/tree-sitter-pascal) Copyright (c) 2018 Benjamin Gray
+- [perl](https://github.com/tree-sitter-perl/tree-sitter-perl) Copyright 2025 Avishai "Veesh" Goldman
+- [php](https://github.com/tree-sitter/tree-sitter-php) Copyright (c) 2017 Josh Vera, GitHub
+- [prolog](https://github.com/foxyseta/tree-sitter-prolog) GNU AFFERO GENERAL PUBLIC LICENSE v3
+- [pug](https://github.com/codepen/tree-sitter-pug) Copyright (c) 2021 Florian Proksch
+- [python](https://github.com/tree-sitter/tree-sitter-python) Copyright (c) 2016 Max Brunsfeld
+- [r](https://github.com/r-lib/tree-sitter-r) Copyright (c) 2025 tree-sitter-r authors
+- [racket](https://github.com/6cdh/tree-sitter-racket) Copyright (c) 2022 6cdh
+- [regex](https://github.com/tree-sitter/tree-sitter-regex) Copyright (c) 2014 Max Brunsfeld
+- [riscv](https://github.com/omeyenburg/tree-sitter-riscv) Copyright (c) 2025 Oskar Meyenburg
+- [ruby](https://github.com/tree-sitter/tree-sitter-ruby) Copyright (c) 2016 Rob Rix
+- [rust](https://github.com/tree-sitter/tree-sitter-rust) Copyright (c) 2017 Maxim Sokolov
+- [scala](https://github.com/tree-sitter/tree-sitter-scala) Copyright (c) 2018 Max Brunsfeld and GitHub
+- [scheme](https://github.com/6cdh/tree-sitter-scheme) Copyright (c) 2022 6cdh
+- [scss](https://github.com/tree-sitter-grammars/tree-sitter-scss) Copyright (c) 2024 Amaan Qureshi
+- [sql](https://github.com/derekstride/tree-sitter-sql) Copyright (c) 2021 Derek Stride
+- [strdl](https://github.com/joshuadanpeterson/tree-sitter-strdl) GNU AFFERO GENERAL PUBLIC LICENSE v3
+- [swift](https://github.com/alex-pinkus/tree-sitter-swift) Copyright (c) 2021 alex-pinkus
+- [tcl](https://github.com/tree-sitter-grammars/tree-sitter-tcl) Copyright (c) 2022 Lewis Russell
+- [toml](https://github.com/ikatyang/tree-sitter-toml) Copyright (c) Ika
+- [typescript](https://github.com/tree-sitter/tree-sitter-typescript) Copyright (c) 2017 Max Brunsfeld
+- [typst](https://github.com/uben0/tree-sitter-typst) Copyright (c) 2023 Gerbais-Nief Eddie
+- [uxntal](https://github.com/amaanq/tree-sitter-uxntal) Copyright (c) 2023 Amaan Qureshi
+- [wat](https://github.com/g-plane/tree-sitter-wat) Copyright (c) 2026-present Pig Fang
+- [xml](https://github.com/tree-sitter-grammars/tree-sitter-xml) Copyright (c) 2023 ObserverOfTime
+- [yaml](https://github.com/tree-sitter-grammars/tree-sitter-yaml) Copyright (c) 2024 tree-sitter-grammars contributors
+- [zig](https://github.com/tree-sitter-grammars/tree-sitter-zig) Copyright (c) 2024 Amaan Qureshi
+
